@@ -305,7 +305,7 @@ if not _G.WRDESPLoaded then
             Color = box.Color,
             Center = true,
             Outline = true,
-            Size = 19,
+            Size = 10,
             Visible = self.Enabled and self.Names
         })
 
