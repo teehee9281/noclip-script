@@ -30,29 +30,11 @@ local function Highlight(plr)
     end
 
     -- Create Nametag (BillboardGui)
-    local billboard = Instance.new("BillboardGui")
-    billboard.Name = plr.Name.."Nametag"
-    billboard.Parent = plr.Character:WaitForChild("Head")
-    billboard.Adornee = plr.Character:WaitForChild("Head")
-    billboard.Size = UDim2.new(0, 100, 0, 50)  -- Fixed size, no scaling
-    billboard.StudsOffset = Vector3.new(0, 2, 0)  -- Adjust height above the player's head
-    billboard.AlwaysOnTop = true  -- Ensure it stays above other GUI elements
 
-    local label = Instance.new("TextLabel")
-    label.Parent = billboard
-    label.Size = UDim2.new(1, 0, 1, 0)
-    label.Text = plr.Name
-    label.TextColor3 = Color3.fromRGB(255, 255, 255)
-    label.TextStrokeTransparency = 0.5
-    label.BackgroundTransparency = 1
-    label.TextScaled = true
 
-    connections[plr] = plr.CharacterAdded:Connect(function(char)
-        if char:FindFirstChild("Head") then
-            billboard.Adornee = char:FindFirstChild("Head")
-        end
-    end)
-end
+
+
+
 
 Players.PlayerAdded:Connect(Highlight)
 for i,v in next, Players:GetPlayers() do
